@@ -19,7 +19,6 @@ dependencies = [
     "ipykernel",
     "matplotlib",
     "numpy",
-    "cartopy",
 ]
 
 [project.optional-dependencies]
