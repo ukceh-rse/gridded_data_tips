@@ -52,7 +52,8 @@ https://earthly.dev/blog/python-uv
 
 
 ```
-uv venv my_env
+uv venv gridded
+. ./gridded/bin/activate
 uv sync
 ```
 
