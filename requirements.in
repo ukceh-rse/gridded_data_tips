@@ -1,0 +1,15 @@
+numpy
+pandas
+geopandas
+cartopy
+xarray
+dask
+matplotlib
+jupyter
+netCDF4
+pyshp
+affine
+rasterio
+folium
+param
+panel
