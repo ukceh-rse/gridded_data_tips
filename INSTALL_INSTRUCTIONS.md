@@ -50,10 +50,30 @@ It will be /usr/bin/python (or similar) for the standard system one,
 
 https://earthly.dev/blog/python-uv
 
+https://alberto-agudo.github.io/posts/02-uv-for-package-management-in-python/index.html
 
 ```
 uv venv gridded
 . ./gridded/bin/activate
 uv sync
 ```
+
+## Issues installing cartopy
+
+Cartopy requires python >=3.10
+https://github.com/SciTools/cartopy/blob/main/pyproject.toml
+
+`uv lock` by default generates "resolution markers" for python versions down to 3.7
+
+You can `uv python pin` and add a version file https://github.com/astral-sh/uv/issues/6780 
+
+This doesn't affect the behaviour of `uv add cartopy` / `uv sync` though
+
+
+TBC
+
+
+
+
+
 
