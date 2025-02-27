@@ -1,5 +1,5 @@
-ANACONDA INSTALLATION INSTRUCTIONS
-----------------------------------
+## ANACONDA INSTALLATION INSTRUCTIONS
+
 To get the notebook to run you will need to install jupyter and several python modules that are
 not available on the standard linux set up at UKCEH.  
 The easiest way to do this is to install anaconda in your home directory, and using
@@ -46,4 +46,13 @@ run 'which python'.
 It will be /usr/bin/python (or similar) for the standard system one,
 /users/sgsys/username/anaconda3... for an anaconda one
 
+## `uv` installation
+
+https://earthly.dev/blog/python-uv
+
+
+```
+uv venv my_env
+uv sync
+```
 
