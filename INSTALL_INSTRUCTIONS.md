@@ -1,5 +1,5 @@
-ANACONDA INSTALLATION INSTRUCTIONS
-----------------------------------
+## ANACONDA INSTALLATION INSTRUCTIONS
+
 To get the notebook to run you will need to install jupyter and several python modules that are
 not available on the standard linux set up at UKCEH.  
 The easiest way to do this is to install anaconda in your home directory, and using
@@ -45,5 +45,37 @@ To check which python you are using, or which anaconda environment you are using
 run 'which python'.
 It will be /usr/bin/python (or similar) for the standard system one,
 /users/sgsys/username/anaconda3... for an anaconda one
+
+## `uv` installation
+
+https://earthly.dev/blog/python-uv
+
+https://alberto-agudo.github.io/posts/02-uv-for-package-management-in-python/index.html
+
+```
+uv venv gridded
+. ./gridded/bin/activate
+uv sync
+```
+
+## Issues installing cartopy
+
+Trying to `uv add` or `uv sync` including `cartopy` triggers an error about `numpy`'s C dependencies which mentions a 1.* version of numpy which we are not requesting. The only place I can see this mentioned is in `uv.lock`'s "resolution markers" for older python versions, see below.
+
+Cartopy requires python >=3.10
+https://github.com/SciTools/cartopy/blob/main/pyproject.toml
+
+`uv lock` by default generates "resolution markers" for python versions down to 3.7
+
+You can `uv python pin` and add a version file https://github.com/astral-sh/uv/issues/6780 
+
+This doesn't affect the behaviour of `uv add cartopy` / `uv sync` though...
+
+
+TBC
+
+
+
+
 
 
