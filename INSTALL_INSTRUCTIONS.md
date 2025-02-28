@@ -60,6 +60,8 @@ uv sync
 
 ## Issues installing cartopy
 
+Trying to `uv add` or `uv sync` including `cartopy` triggers an error about `numpy`'s C dependencies which mentions a 1.* version of numpy which we are not requesting. The only place I can see this mentioned is in `uv.lock`'s "resolution markers" for older python versions, see below.
+
 Cartopy requires python >=3.10
 https://github.com/SciTools/cartopy/blob/main/pyproject.toml
 
@@ -67,7 +69,7 @@ https://github.com/SciTools/cartopy/blob/main/pyproject.toml
 
 You can `uv python pin` and add a version file https://github.com/astral-sh/uv/issues/6780 
 
-This doesn't affect the behaviour of `uv add cartopy` / `uv sync` though
+This doesn't affect the behaviour of `uv add cartopy` / `uv sync` though...
 
 
 TBC
